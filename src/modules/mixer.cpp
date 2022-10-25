@@ -15,16 +15,6 @@ float sqrtOrZero(float number)
 Mixer::Mixer(): motor_1(MOTOR1), motor_2( MOTOR2 ), motor_3( MOTOR3 ) ,motor_4( MOTOR4 ), redRLed(LED_RED_R,!false), redLLed(LED_RED_L,!false), blueLed(LED_BLUE_L,false),
  greenRLed(LED_GREEN_R,false), greenLLed(LED_GREEN_L,false)
 {
-<<<<<<< HEAD
-  motor_1.period(1.0 / 500.0);
-  motor_2.period(1.0 / 500.0);
-  motor_3.period(1.0 / 500.0);
-  motor_4.period(1.0 / 500.0);
-  motor_1 = 0.0;
-  motor_2 = 0.0;
-  motor_3 = 0.0;
-  motor_4 = 0.0;
-=======
     motor_1 . period (1.0/500.0) ;
     motor_2 . period (1.0/500.0) ;
     motor_3 . period (1.0/500.0) ;
@@ -33,7 +23,6 @@ Mixer::Mixer(): motor_1(MOTOR1), motor_2( MOTOR2 ), motor_3( MOTOR3 ) ,motor_4( 
     motor_2 = 0.0;
     motor_3 = 0.0;
     motor_4 = 0.0;
->>>>>>> 3adc0fe774595bc079c53b64c240dc278a3d317e
 }
 
 // Actuate motors with desired total trust force (N) and torques (N.m)
