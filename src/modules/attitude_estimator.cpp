@@ -10,7 +10,11 @@ AttitudeEstimator::AttitudeEstimator():imu( IMU_SDA , IMU_SCL )
     // Angular velocities ( rad /s)
     p =0 , q = 0, r = 0;
 
+<<<<<<< HEAD
     p_bias, q_bias, r_bias = 0;
+=======
+    p_bias = 0;
+>>>>>>> 3adc0fe774595bc079c53b64c240dc278a3d317e
 
 }
 
