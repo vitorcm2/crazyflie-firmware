@@ -25,7 +25,13 @@
 // Include Attitude Estimator Class
 #include "modules/attitude_estimator.h"
 
-// Include Attitude Estimator Class
+// Include Attitude Controller Class
 #include "modules/attitude_controller.h"
+
+// Include Vertical Estimator Class
+#include "modules/vertical_estimator.h"
+
+// Include Vertical Controller Class
+#include "modules/vertical_controller.h"
 
 #endif

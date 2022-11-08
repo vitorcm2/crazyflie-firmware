@@ -43,4 +43,20 @@ const float wn_2 = 4.0/(zeta*ts_2);
 const float kp_att_2 = wn_2*wn_2;
 const float kd_att_2 =2.0*zeta*wn_2;
 
+//Vertical estimator
+const float dt_range = 0.05;
+const float zeta_vert = sqrt(2.0)/2.0;
+const float wc_vert = 10.0;
+const float l_vert1 = wc_vert * wc_vert;
+const float l_vert2 = 2.0 * zeta_vert * wc_vert;
+
+// Ganho rolagem (phi) e inclinacao (theta)
+const float ts_vert = 2.0;
+const float up_vert = 0.005;
+const float zeta_vert2 = abs(log(up_vert))/sqrt(pow(log(up_vert),2)+pow(pi,2));
+const float wn_vert = 4.0/(zeta_vert2*ts_vert);
+
+const float kp_vert = wn_vert * wn_vert;
+const float kd_vert = 2.0 * zeta_vert2 * wn_vert;
+
 #endif
