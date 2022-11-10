@@ -59,4 +59,7 @@ const float wn_vert = 4.0/(zeta_vert2*ts_vert);
 const float kp_vert = wn_vert * wn_vert;
 const float kd_vert = 2.0 * zeta_vert2 * wn_vert;
 
+// Horizontal estimator
+const float sigma = 2.0 * tan((42.0*pi/180.0)/2.0)/(420.0 * dt);
+const float ganho_observador = 50.0;
 #endif

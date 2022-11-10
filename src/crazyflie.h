@@ -34,4 +34,7 @@
 // Include Vertical Controller Class
 #include "modules/vertical_controller.h"
 
+// Include Vertical Estimator Class
+#include "modules/horizontal_estimator.h"
+
 #endif
