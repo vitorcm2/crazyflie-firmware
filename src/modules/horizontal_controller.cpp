@@ -9,8 +9,8 @@ HorizontalController::HorizontalController() {
 // and current positions (m) and velocities (m/s)
 void HorizontalController::control(float x_r, float y_r, float x, float y,
                                     float u, float v) {
-  phi_r = 1/g * control_siso(x_r, x, u, kp_horizontal, kd_horizontal);
-  theta_r = - 1/g * control_siso(y_r, y, v, kp_horizontal, kd_horizontal);
+  theta_r = 1/g * control_siso(x_r, x, u, kp_horizontal, kd_horizontal);
+  phi_r = - 1/g * control_siso(y_r, y, v, kp_horizontal, kd_horizontal);
 }
 
 // Control acceleration given reference position (m) and current position (m)

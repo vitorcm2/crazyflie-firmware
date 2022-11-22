@@ -2,13 +2,17 @@
 #include <cmath>
 #include "mbed.h"
 
+DigitalOut led(LED_BLUE_L,!false);
+
 // Class constructor
-AttitudeEstimator::AttitudeEstimator():imu( IMU_SDA , IMU_SCL )
+AttitudeEstimator::AttitudeEstimator():imu( IMU_SDA , IMU_SCL)
 {
     // Euler angles ( rad)
     phi = 0, theta = 0 , psi = 0;
     // Angular velocities ( rad /s)
     p =0 , q = 0, r = 0;
+    // Calibragem
+    p_bias = 0, q_bias = 0, r_bias = 0;
 }
 
 // Initialize class
@@ -22,6 +26,9 @@ void AttitudeEstimator::init()
         q_bias += imu.gy/500.0;
         r_bias += imu.gz/500.0;
         wait(dt);
+        if (i%10 == 0){
+            led = !led;
+        }
     }
 
 }

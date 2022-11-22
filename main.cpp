@@ -9,5 +9,5 @@
 // Lab programs
 // #include "programs/labs/lab08.h"
 // #include "programs/labs/lab02.h"
-#include "programs/labs/lab12.h"
+#include "programs/labs/labFinal.h"
 // #include "programs/examples/ex05_range.h"

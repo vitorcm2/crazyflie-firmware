@@ -15,16 +15,12 @@ const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
 //Constantes
-const float a1 = 1.128e-09;
+const float a1 = 1.128e-9;
 const float a2 = 1.269e-07;
 const float kl = 1.526e-08;
 const float kd = 1.061e-10;
 
 const float ele = 33e-3;
-
-const float tsub = 2;
-const float tvoo = 5;
-const float tdesc = 2;
 
 const float wc = 5.0;
 const float dt = 0.002;
@@ -74,4 +70,11 @@ const float wn_horizontal = 4.0/(zeta_horizontal*ts_horizontal);
 
 const float kp_horizontal =  wn_horizontal * wn_horizontal;
 const float kd_horizontal =  2.0 * zeta_horizontal * wn_horizontal;
+
+//Lab Final
+const float tsub = 10.0;
+const float tvoo = 2.0;
+const float tdesc = 10.0;
+
+
 #endif

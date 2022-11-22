@@ -2,7 +2,8 @@
 
 // Class constructor
 VerticalEstimator::VerticalEstimator(): range(E_SDA, E_SCL) { 
-    z, w = 0;
+    z = 0;
+    w = 0;
 }
 // Initialize class
 void VerticalEstimator::init() {
@@ -11,7 +12,10 @@ void VerticalEstimator::init() {
 // Predict vertical position and velocity from model
 void VerticalEstimator::predict(float f_t) {
     z = z + w * dt; 
-    w = w; // (-g+f_t/m)*dt;
+    if (z > 0.05){
+        w = w + (-g+f_t/m)*dt;
+    }
+    
 }
 // Correct vertical position and velocity with measurement
 void VerticalEstimator::correct(float phi, float theta) {

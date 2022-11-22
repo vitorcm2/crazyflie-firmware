@@ -4,7 +4,7 @@
 float sqrtOrZero(float number)
 {
     if(number > 0.0){
-        return sqrtf(number);
+        return sqrt(number);
     }
     else{
         return 0.0;
@@ -40,8 +40,8 @@ void Mixer::actuate(float f_t , float tau_phi , float tau_theta , float tau_psi 
 // Convert total trust force (N) and torques (N.m) to angular velocities ( rad /s)
 void Mixer::mixer( float f_t , float tau_phi , float tau_theta , float tau_psi )
 {
-    // Convert desired angular velocity ( rad /s) to PWM signal (%)
-    omega_1 = sqrtOrZero(((1.0/(4.0*kl))*f_t) - ((1.0/(4.0*kl*ele))*tau_phi) - ((1.0/(4.0*kl*ele))*tau_theta) - ((1.0/(4.0*kd))*tau_psi));
+    // Convert desired angular velocity ( rad /s) to PWM signal (%)                                                       
+    omega_1 = sqrtOrZero(((1.0/(4.0*kl))*f_t) - ((1.0/(4.0*kl*ele))*tau_phi) - ((1.0/(4.0*kl*ele))*tau_theta) - ((1.0/(4.0*kd))*tau_psi)); 
     omega_2 = sqrtOrZero(((1.0/(4.0*kl))*f_t) - ((1.0/(4.0*kl*ele))*tau_phi) + ((1.0/(4.0*kl*ele))*tau_theta) + ((1.0/(4.0*kd))*tau_psi));
     omega_3 = sqrtOrZero(((1.0/(4.0*kl))*f_t) + ((1.0/(4.0*kl*ele))*tau_phi) + ((1.0/(4.0*kl*ele))*tau_theta) - ((1.0/(4.0*kd))*tau_psi));
     omega_4 = sqrtOrZero(((1.0/(4.0*kl))*f_t) + ((1.0/(4.0*kl*ele))*tau_phi) - ((1.0/(4.0*kl*ele))*tau_theta) + ((1.0/(4.0*kd))*tau_psi));
