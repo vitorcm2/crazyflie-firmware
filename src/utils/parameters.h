@@ -22,6 +22,9 @@ const float kd = 1.061e-10;
 
 const float ele = 33e-3;
 
+const float tsub = 2;
+const float tvoo = 5;
+const float tdesc = 2;
 
 const float wc = 5.0;
 const float dt = 0.002;
@@ -62,4 +65,13 @@ const float kd_vert = 2.0 * zeta_vert2 * wn_vert;
 // Horizontal estimator
 const float sigma = 2.0 * tan((42.0*pi/180.0)/2.0)/(420.0 * dt);
 const float ganho_observador = 50.0;
+
+// Ganho horizontal
+const float ts_horizontal = 2.0;
+const float up_horizontal = 0.005;
+const float zeta_horizontal = abs(log(up_horizontal))/sqrt(pow(log(up_horizontal),2)+pow(pi,2));
+const float wn_horizontal = 4.0/(zeta_horizontal*ts_horizontal);
+
+const float kp_horizontal =  wn_horizontal * wn_horizontal;
+const float kd_horizontal =  2.0 * zeta_horizontal * wn_horizontal;
 #endif
