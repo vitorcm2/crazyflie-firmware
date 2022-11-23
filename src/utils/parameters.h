@@ -15,14 +15,14 @@ const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
 //Constantes
-const float a1 = 1.128e-9;
+const float a1 = 1.128e-14;
 const float a2 = 1.269e-07;
 const float kl = 1.526e-08;
 const float kd = 1.061e-10;
 
 const float ele = 33e-3;
 
-const float wc = 5.0;
+const float wc = 1.0;
 const float dt = 0.002;
 const float alpha = (wc*dt)/(1+wc*dt);
 

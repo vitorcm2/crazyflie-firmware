@@ -40,6 +40,7 @@ int main() {
   tic_range.attach(&callback_range, dt_range);
   // Arm motors and run controller while stable
   mixer.arm();
+  tim.start();
   while (abs(att_est.phi) <= pi / 4.0 && abs(att_est.theta) <= pi / 4.0 &&
          abs(att_est.p) <= 4.0 * pi && abs(att_est.q) <= 4.0 * pi &&
          abs(att_est.r) <= 4.0 * pi) {
@@ -49,10 +50,10 @@ int main() {
       if(t < tsub){
           z_r = h/tsub*t;
       }
-      else if(t<tsub+tvoo){
+      else if(t < (tsub + tvoo) ){
           z_r = h;
       }
-      else if(t > tsub + tvoo){
+      else{
           z_r = (h/tdesc)*((tsub + tvoo)-t);
       }
       att_est.estimate();
