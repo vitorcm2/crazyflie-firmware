@@ -72,9 +72,9 @@ const float kp_horizontal =  wn_horizontal * wn_horizontal;
 const float kd_horizontal =  2.0 * zeta_horizontal * wn_horizontal;
 
 //Lab Final
-const float tsub = 10.0;
-const float tvoo = 2.0;
-const float tdesc = 10.0;
+const float tsub = 2.0;
+const float tvoo = 6.0;
+const float tdesc = 2.0;
 
 
 #endif

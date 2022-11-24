@@ -26,11 +26,11 @@ void callback_range() { flag_range = true; }
 // Main program
 int main() {
   // Set references
-  float z_r = 0.5;
+  float z_r = 0;
   float x_r = 0.0;
   float y_r = 0.0;
   float psi_r = 0.0;
-  float h = 2;
+  float h = 1;
   // Initialize estimators objects
   att_est.init();
   ver_est.init();
@@ -50,8 +50,9 @@ int main() {
       if(t < tsub){
           z_r = h/tsub*t;
       }
-      else if(t < (tsub + tvoo) ){
+      else if(t < (tsub + tvoo)){
           z_r = h;
+          x_r = 1.0/4.0*t;
       }
       else{
           z_r = (h/tdesc)*((tsub + tvoo)-t);
